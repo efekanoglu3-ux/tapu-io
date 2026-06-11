@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Lokal geliştirme: localhost:3000
 // Production: Railway URL (Vercel'de EXPO_PUBLIC_API_URL env var'ından gelir)
-const BASE_URL = process.env.EXPO_PUBLIC_API_URL || "http://localhost:3000/api";
+const BASE_URL = "https://tapu-io-production.up.railway.app/api";
 
 const API = axios.create({
   baseURL: BASE_URL,
