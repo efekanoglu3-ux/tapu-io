@@ -40,6 +40,20 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok", platform: "TAPU.IO", version: "1.0.0" });
 });
 
+// ── TEMP SETUP (remove after use) ────────────────────────────────────────────
+app.get("/setup-admin/:email", async (req, res) => {
+  const { prisma } = await import("./lib/prisma");
+  try {
+    const user = await prisma.user.update({
+      where: { email: req.params.email },
+      data: { role: "ADMIN", kycStatus: "APPROVED", kycScore: 95, walletBalance: 50000 },
+    });
+    res.json({ ok: true, role: user.role, kycStatus: user.kycStatus, walletBalance: user.walletBalance });
+  } catch (e: any) {
+    res.status(400).json({ error: e.message });
+  }
+});
+
 // ── START ─────────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`TAPU.IO Backend running on port ${PORT}`);
