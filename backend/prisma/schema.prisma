@@ -1,0 +1,213 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String        @id @default(cuid())
+  email          String        @unique
+  phone          String?
+  name           String
+  passwordHash   String
+  role           Role          @default(INVESTOR)
+  kycStatus      KYCStatus     @default(PENDING)
+  kycScore       Int?
+  kycDocuments   Json?
+  walletAddress  String?
+  walletBalance  Float         @default(0)
+  masak          MASAKStatus   @default(CLEAR)
+  language       String        @default("tr")
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  portfolio      TokenHolding[]
+  transactions   Transaction[]
+  properties     Property[]    @relation("PropertyOwner")
+  listings       MarketListing[] @relation("SellerListings")
+  auditLogs      AuditLog[]
+}
+
+model Property {
+  id                String          @id @default(cuid())
+  name              String
+  nameTr            String
+  location          String
+  type              PropertyType
+  description       String?
+  descriptionTr     String?
+  value             Float
+  totalTokens       Int
+  tokenPrice        Float
+  soldTokens        Int             @default(0)
+  monthlyRent       Float
+  annualYield       Float
+  status            PropertyStatus  @default(PENDING)
+  hasReserveFund    Boolean         @default(false)
+  reserveFundPct    Float           @default(0)
+  reserveFundBalance Float          @default(0)
+  occupancyRate     Float           @default(0.92)
+  contractUrl       String?
+  tapuSherhUrl      String?
+  valuationReportUrl String?
+  blockchainAddress String?
+  tokenId           Int?
+  images            String[]
+  sqm               Float?
+  yearBuilt         Int?
+  ownerId           String
+  owner             User            @relation("PropertyOwner", fields: [ownerId], references: [id])
+  holdings          TokenHolding[]
+  rentPayments      RentPayment[]
+  marketListings    MarketListing[]
+  auditLogs         AuditLog[]
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+}
+
+model TokenHolding {
+  id            String   @id @default(cuid())
+  userId        String
+  propertyId    String
+  tokens        Int
+  purchasePrice Float
+  currentValue  Float
+  purchaseDate  DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user          User     @relation(fields: [userId], references: [id])
+  property      Property @relation(fields: [propertyId], references: [id])
+
+  @@unique([userId, propertyId])
+}
+
+model Transaction {
+  id          String    @id @default(cuid())
+  userId      String
+  type        TxType
+  amount      Float
+  propertyId  String?
+  tokens      Int?
+  fee         Float     @default(0)
+  status      TxStatus  @default(PENDING)
+  txHash      String?
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user        User      @relation(fields: [userId], references: [id])
+}
+
+model RentPayment {
+  id           String   @id @default(cuid())
+  propertyId   String
+  amount       Float
+  period       String
+  distributed  Boolean  @default(false)
+  distributedAt DateTime?
+  txHash       String?
+  createdAt    DateTime @default(now())
+
+  property     Property @relation(fields: [propertyId], references: [id])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  propertyId String?
+  action     String
+  details    Json?
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  user       User?     @relation(fields: [userId], references: [id])
+  property   Property? @relation(fields: [propertyId], references: [id])
+}
+
+model MarketListing {
+  id            String              @id @default(cuid())
+  sellerId      String
+  propertyId    String
+  tokens        Int
+  pricePerToken Float
+  status        ListingStatus       @default(ACTIVE)
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+
+  seller        User                @relation("SellerListings", fields: [sellerId], references: [id])
+  property      Property            @relation(fields: [propertyId], references: [id])
+}
+
+model PlatformSettings {
+  id                    String  @id @default(cuid())
+  listingFee            Float   @default(7500)
+  tokenSaleCommission   Float   @default(0.025)
+  managementFeeAnnual   Float   @default(0.01)
+  secondaryMarketFee    Float   @default(0.01)
+  propertySaleFee       Float   @default(0.01)
+  minInvestment         Float   @default(100)
+  maxInvestmentNoKYC    Float   @default(10000)
+  updatedAt             DateTime @updatedAt
+}
+
+enum Role {
+  INVESTOR
+  OWNER
+  ADMIN
+}
+
+enum KYCStatus {
+  PENDING
+  IN_REVIEW
+  APPROVED
+  REJECTED
+}
+
+enum MASAKStatus {
+  CLEAR
+  REVIEW
+  BLOCKED
+}
+
+enum PropertyType {
+  RESIDENTIAL
+  COMMERCIAL
+  LAND
+  HOTEL
+}
+
+enum PropertyStatus {
+  PENDING
+  APPROVED
+  ACTIVE
+  SOLD
+  REJECTED
+  SUSPENDED
+}
+
+enum TxType {
+  TOKEN_PURCHASE
+  TOKEN_SALE
+  RENT_INCOME
+  WITHDRAWAL
+  DEPOSIT
+  PLATFORM_FEE
+  RESERVE_FUND
+  PROPERTY_SALE
+}
+
+enum ListingStatus {
+  ACTIVE
+  SOLD
+  CANCELLED
+}
+
+enum TxStatus {
+  PENDING
+  CONFIRMED
+  FAILED
+  CANCELLED
+}

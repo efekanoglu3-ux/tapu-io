@@ -1,0 +1,159 @@
+{
+  "app": {
+    "name": "TAPU.IO",
+    "tagline": "Digital Title System",
+    "subtitle": "Turkey's First Real Estate Tokenization Platform"
+  },
+  "auth": {
+    "login": "Log In",
+    "register": "Sign Up",
+    "logout": "Log Out",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "phone": "Phone",
+    "forgotPassword": "Forgot Password",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "roles": {
+    "investor": "Investor",
+    "owner": "Property Owner",
+    "admin": "Admin",
+    "investorDesc": "Buy tokens, manage portfolio",
+    "ownerDesc": "List your property, earn income",
+    "adminDesc": "Platform management"
+  },
+  "kyc": {
+    "title": "Identity Verification",
+    "pending": "Pending",
+    "inReview": "In Review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "required": "Identity verification required to buy tokens",
+    "uploadId": "Upload ID Card",
+    "uploadSelfie": "Take Selfie",
+    "submit": "Submit"
+  },
+  "market": {
+    "title": "Market",
+    "allProperties": "All Properties",
+    "filter": "Filter",
+    "sort": "Sort",
+    "search": "Search property...",
+    "noProperties": "No properties yet"
+  },
+  "property": {
+    "value": "Property Value",
+    "tokenPrice": "Token Price",
+    "totalTokens": "Total Tokens",
+    "soldTokens": "Tokens Sold",
+    "availableTokens": "Available Tokens",
+    "annualYield": "Annual Yield",
+    "monthlyRent": "Monthly Rent",
+    "location": "Location",
+    "type": "Type",
+    "sqm": "sqm",
+    "yearBuilt": "Year Built",
+    "occupancy": "Occupancy",
+    "reserveFund": "Reserve Fund",
+    "residential": "Residential",
+    "commercial": "Commercial",
+    "land": "Land",
+    "hotel": "Hotel",
+    "status": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "active": "Active",
+      "sold": "Sold",
+      "rejected": "Rejected"
+    }
+  },
+  "token": {
+    "buy": "Buy Tokens",
+    "sell": "Sell Tokens",
+    "amount": "Amount",
+    "totalCost": "Total Cost",
+    "estimatedMonthly": "Est. Monthly Return",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "buySuccess": "Tokens purchased",
+    "sellSuccess": "Tokens sold",
+    "insufficientBalance": "Insufficient balance",
+    "insufficientTokens": "Not enough tokens",
+    "kycRequired": "KYC verification required"
+  },
+  "portfolio": {
+    "title": "My Portfolio",
+    "totalValue": "Total Value",
+    "monthlyIncome": "Monthly Income",
+    "totalReturn": "Total Return",
+    "noHoldings": "No investments yet",
+    "startInvesting": "Start Investing"
+  },
+  "owner": {
+    "myProperties": "My Properties",
+    "addProperty": "Add Property",
+    "earnings": "My Earnings",
+    "listProperty": "List Property",
+    "propertyName": "Property Name",
+    "propertyValue": "Property Value",
+    "tokenCount": "Token Count",
+    "description": "Description",
+    "noProperties": "No properties yet",
+    "protection": {
+      "title": "Property Owner Guarantee",
+      "item1": "Your title deed stays with you",
+      "item2": "Notary-approved contract",
+      "item3": "Automatic income via smart contract",
+      "item4": "Retrieve your property anytime"
+    }
+  },
+  "wallet": {
+    "title": "Wallet",
+    "balance": "Balance",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "history": "Transaction History"
+  },
+  "admin": {
+    "dashboard": "Dashboard",
+    "properties": "Properties",
+    "users": "Users",
+    "settings": "Settings",
+    "totalUsers": "Total Users",
+    "totalProperties": "Total Properties",
+    "platformVolume": "Platform Volume",
+    "commission": "Commission Revenue",
+    "approve": "Approve",
+    "reject": "Reject",
+    "pending": "Pending"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "yes": "Yes",
+    "no": "No",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "currency": "₺",
+    "perMonth": "/mo",
+    "perYear": "/yr",
+    "perToken": "/token"
+  },
+  "errors": {
+    "networkError": "Network error",
+    "unauthorized": "Session expired",
+    "forbidden": "You don't have permission",
+    "notFound": "Not found",
+    "serverError": "Server error"
+  }
+}

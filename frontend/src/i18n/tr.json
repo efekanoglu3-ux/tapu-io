@@ -1,0 +1,159 @@
+{
+  "app": {
+    "name": "TAPU.IO",
+    "tagline": "Dijital Tapu Sistemi",
+    "subtitle": "Türkiye'nin İlk Gayrimenkul Tokenizasyon Platformu"
+  },
+  "auth": {
+    "login": "Giriş Yap",
+    "register": "Kayıt Ol",
+    "logout": "Çıkış",
+    "email": "E-posta",
+    "password": "Şifre",
+    "name": "Ad Soyad",
+    "phone": "Telefon",
+    "forgotPassword": "Şifremi Unuttum",
+    "noAccount": "Hesabın yok mu?",
+    "hasAccount": "Zaten hesabın var mı?"
+  },
+  "roles": {
+    "investor": "Yatırımcı",
+    "owner": "Mülk Sahibi",
+    "admin": "Admin",
+    "investorDesc": "Token satın al, portföy yönet",
+    "ownerDesc": "Mülkünü listele, gelir kazan",
+    "adminDesc": "Platform yönetimi"
+  },
+  "kyc": {
+    "title": "Kimlik Doğrulama",
+    "pending": "Beklemede",
+    "inReview": "İnceleniyor",
+    "approved": "Onaylı",
+    "rejected": "Reddedildi",
+    "required": "Token almak için kimlik doğrulama gerekli",
+    "uploadId": "Kimlik Kartı Yükle",
+    "uploadSelfie": "Selfie Çek",
+    "submit": "Gönder"
+  },
+  "market": {
+    "title": "Market",
+    "allProperties": "Tüm Mülkler",
+    "filter": "Filtrele",
+    "sort": "Sırala",
+    "search": "Mülk ara...",
+    "noProperties": "Henüz mülk yok"
+  },
+  "property": {
+    "value": "Mülk Değeri",
+    "tokenPrice": "Token Fiyatı",
+    "totalTokens": "Toplam Token",
+    "soldTokens": "Satılan Token",
+    "availableTokens": "Mevcut Token",
+    "annualYield": "Yıllık Getiri",
+    "monthlyRent": "Aylık Kira",
+    "location": "Konum",
+    "type": "Tip",
+    "sqm": "m²",
+    "yearBuilt": "Yapım Yılı",
+    "occupancy": "Doluluk",
+    "reserveFund": "Rezerv Fon",
+    "residential": "Konut",
+    "commercial": "Ticari",
+    "land": "Arsa",
+    "hotel": "Otel",
+    "status": {
+      "pending": "Beklemede",
+      "approved": "Onaylı",
+      "active": "Aktif",
+      "sold": "Satıldı",
+      "rejected": "Reddedildi"
+    }
+  },
+  "token": {
+    "buy": "Token Satın Al",
+    "sell": "Token Sat",
+    "amount": "Miktar",
+    "totalCost": "Toplam Tutar",
+    "estimatedMonthly": "Tahmini Aylık Getiri",
+    "confirm": "Onayla",
+    "cancel": "İptal",
+    "buySuccess": "Token satın alındı",
+    "sellSuccess": "Token satıldı",
+    "insufficientBalance": "Yetersiz bakiye",
+    "insufficientTokens": "Yeterli token yok",
+    "kycRequired": "KYC doğrulama gerekli"
+  },
+  "portfolio": {
+    "title": "Portföyüm",
+    "totalValue": "Toplam Değer",
+    "monthlyIncome": "Aylık Gelir",
+    "totalReturn": "Toplam Getiri",
+    "noHoldings": "Henüz yatırımın yok",
+    "startInvesting": "Yatırım Yapmaya Başla"
+  },
+  "owner": {
+    "myProperties": "Mülklerim",
+    "addProperty": "Mülk Ekle",
+    "earnings": "Kazançlarım",
+    "listProperty": "Mülkü Listele",
+    "propertyName": "Mülk Adı",
+    "propertyValue": "Mülk Değeri",
+    "tokenCount": "Token Sayısı",
+    "description": "Açıklama",
+    "noProperties": "Henüz mülk yok",
+    "protection": {
+      "title": "Mülk Sahibi Güvencesi",
+      "item1": "Tapunuz elinizde kalır",
+      "item2": "Noterden onaylı sözleşme",
+      "item3": "Akıllı kontrat ile otomatik gelir",
+      "item4": "İstediğinizde geri alabilirsiniz"
+    }
+  },
+  "wallet": {
+    "title": "Cüzdan",
+    "balance": "Bakiye",
+    "deposit": "Para Yatır",
+    "withdraw": "Para Çek",
+    "history": "İşlem Geçmişi"
+  },
+  "admin": {
+    "dashboard": "Panel",
+    "properties": "Mülkler",
+    "users": "Kullanıcılar",
+    "settings": "Ayarlar",
+    "totalUsers": "Toplam Kullanıcı",
+    "totalProperties": "Toplam Mülk",
+    "platformVolume": "Platform Hacmi",
+    "commission": "Komisyon Geliri",
+    "approve": "Onayla",
+    "reject": "Reddet",
+    "pending": "Bekleyen"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "retry": "Tekrar Dene",
+    "save": "Kaydet",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "back": "Geri",
+    "next": "İleri",
+    "done": "Tamam",
+    "yes": "Evet",
+    "no": "Hayır",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "all": "Tümü",
+    "currency": "₺",
+    "perMonth": "/ay",
+    "perYear": "/yıl",
+    "perToken": "/token"
+  },
+  "errors": {
+    "networkError": "Bağlantı hatası",
+    "unauthorized": "Oturum süreniz doldu",
+    "forbidden": "Bu işlem için yetkiniz yok",
+    "notFound": "Bulunamadı",
+    "serverError": "Sunucu hatası"
+  }
+}

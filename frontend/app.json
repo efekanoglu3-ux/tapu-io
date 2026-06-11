@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "TAPU.IO",
+    "slug": "tapu-io",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "tapu-io",
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": null
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
