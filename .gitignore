@@ -26,3 +26,6 @@ prisma/migrations/
 
 # TypeScript
 *.tsbuildinfo
+
+.vercel
+.env*
