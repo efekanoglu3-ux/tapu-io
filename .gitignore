@@ -28,4 +28,7 @@ prisma/migrations/
 *.tsbuildinfo
 
 .vercel
-.env*
+.env
+.env.local
+.env.development
+# .env.production intentionally tracked for build
